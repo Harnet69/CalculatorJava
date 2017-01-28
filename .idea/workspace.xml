@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="683be51a-45c2-443d-8dc9-951dd8e8a2d0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/MyJButton.java" afterPath="$PROJECT_DIR$/src/GUI/MyJButton.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/MyJFrame.java" afterPath="$PROJECT_DIR$/src/GUI/MyJFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/MyJPanel.java" afterPath="$PROJECT_DIR$/src/GUI/MyJPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/start/Start.java" afterPath="$PROJECT_DIR$/src/start/Start.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,11 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Start.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Start.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/start/Start.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="52" />
+            <state relative-caret-position="353">
+              <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyJFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyJFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/MyJFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="221">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,8 +48,8 @@
       <file leaf-file-name="MyJPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/MyJPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            <state relative-caret-position="220">
+              <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,9 +70,11 @@
       <file leaf-file-name="MyJButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/MyJButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="57" lean-forward="false" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
-              <folding />
+            <state relative-caret-position="198">
+              <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding>
+                <element signature="e#210#211#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,11 +101,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/start/Main.java" />
         <option value="$PROJECT_DIR$/src/GUI/JButton.java" />
-        <option value="$PROJECT_DIR$/src/GUI/MyJButton.java" />
         <option value="$PROJECT_DIR$/src/GUI/MyTextField.java" />
         <option value="$PROJECT_DIR$/src/GUI/MyJPanel.java" />
-        <option value="$PROJECT_DIR$/src/GUI/MyJFrame.java" />
+        <option value="$PROJECT_DIR$/src/GUI/MyJButton.java" />
         <option value="$PROJECT_DIR$/src/start/Start.java" />
+        <option value="$PROJECT_DIR$/src/GUI/MyJFrame.java" />
       </list>
     </option>
   </component>
@@ -578,12 +583,12 @@
       <workItem from="1485513693659" duration="3490000" />
       <workItem from="1485518738975" duration="4242000" />
       <workItem from="1485531567615" duration="2401000" />
-      <workItem from="1485534017136" duration="2127000" />
+      <workItem from="1485534017136" duration="4743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12260000" />
+    <option name="totallyTimeSpent" value="14876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1932" height="1050" extended-state="0" />
@@ -679,7 +684,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="57" lean-forward="false" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
-          <folding />
+          <folding>
+            <element signature="e#210#211#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -725,7 +732,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="57" lean-forward="true" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
-          <folding />
+          <folding>
+            <element signature="e#210#211#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -763,7 +772,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="e#210#211#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -788,11 +799,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/MyJButton.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/MyJPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="57" lean-forward="false" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
-          <folding />
+        <state relative-caret-position="220">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -804,10 +817,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/MyJPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/MyJButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        <state relative-caret-position="198">
+          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#210#211#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/start/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -816,18 +839,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/MyJFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/start/Start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="17" selection-end-column="52" />
+        <state relative-caret-position="221">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

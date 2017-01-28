@@ -16,13 +16,13 @@ public class Start {
             e.printStackTrace();
         }
         JFrame.setDefaultLookAndFeelDecorated(true);
-        MyJButton button1 = new MyJButton("Кнопка1", 100, 50);
+        MyJButton button1 = new MyJButton("1", 100, 100);
         JTextField myText = new JTextField(null,25);
-        //myText.setBackground(Color.cyan);
-        MyJPanel pan1 = new MyJPanel(200,200, myText);
-        MyJPanel pan2 = new MyJPanel(200,200, button1);
-        pan2.setLocation(0, 50);
+        MyJPanel textField = new MyJPanel(300,200, myText);
+        textField.setBackground(Color.green);
+        MyJPanel buttonsBlock = new MyJPanel(300,200, button1);
+        buttonsBlock.setBackground(Color.CYAN);
 
-        MyJFrame frame1 = new MyJFrame("My Calculator", 300, 300, pan1, pan2);
+        MyJFrame frame1 = new MyJFrame("My Calculator", 500, 500, textField, buttonsBlock);
     }
 }

@@ -11,10 +11,4 @@ public class MyJPanel extends JPanel {
         //super.setLocation(100,100);
         super.add(comp);
     }
-
-    public MyJPanel(Component comp){
-       // super.setBackground(Color.cyan);
-        super.add(comp);
-    }
-
 }
