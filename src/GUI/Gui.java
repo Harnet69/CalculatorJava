@@ -12,19 +12,40 @@ public class Gui extends JFrame {
     private JFrame mainFrame;
 
     public Gui(){
-        // Jtattoo skin.   AcrylLookAndFeel  AeroLookAndFeel  AluminiumLookAndFeel  BernsteinLookAndFeel    FastLookAndFeel
+        jtattooSkin();
+        createTextField();
+        createButtons();
+        createPanel();
+        createFrame();
+    }
+
+    /**
+     * Possible Jtattoo skin : Jtattoo skin, AcrylLookAndFeel, AeroLookAndFeel, AluminiumLookAndFeel,
+     * BernsteinLookAndFeel, FastLookAndFeel, HiFiLookAndFeel, McWinLookAndFeel, MintLookAndFeel,
+     * NoireLookAndFeel, SmartLookAndFeel, LunaLookAndFeel, TextureLookAndFeel
+     */
+    private void jtattooSkin(){
         try {
             UIManager.setLookAndFeel(new AeroLookAndFeel());
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
         JFrame.setDefaultLookAndFeelDecorated(true);
+    }
 
-        // Textfield to show action
+    /**
+     * Textfield to show action
+     */
+    private void createTextField(){
         textField = new JTextField(null, 24);
         textField.setEditable(false);
+    }
 
-        // Buttons
+    /**
+     * Create buttons and set their dimension
+     */
+
+    private void createButtons(){
         one = new JButton("1");
         two = new JButton("2");
         three = new JButton("3");
@@ -61,9 +82,12 @@ public class Gui extends JFrame {
         mult.setPreferredSize(actSize);
         remainder.setPreferredSize(actSize);
         equal.setPreferredSize(equalSize);
+    }
 
-
-         // Panel
+    /**
+     * Create panel
+     */
+    private void createPanel(){
         firstPanel = new JPanel();
         firstPanel.setLayout(new FlowLayout());
         firstPanel.add(textField, BorderLayout.NORTH);
@@ -71,9 +95,13 @@ public class Gui extends JFrame {
         firstPanel.add(four); firstPanel.add(five); firstPanel.add(six);firstPanel.add(mult);
         firstPanel.add(seven); firstPanel.add(eight); firstPanel.add(nine);firstPanel.add(plus);
         firstPanel.add(zero); firstPanel.add(equal); firstPanel.add(remainder); firstPanel.add(minus);
+    }
 
+    /**
+     * Create main frame
+     */
 
-        // Window frame
+    private void createFrame(){
         mainFrame = new JFrame("My Calculator");
 //        mainFrame.add(firstPanel);
         mainFrame.setContentPane(firstPanel); // instead .add
@@ -83,5 +111,4 @@ public class Gui extends JFrame {
         mainFrame.setResizable(false);
         mainFrame.setVisible(true);
     }
-
 }
