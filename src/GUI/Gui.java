@@ -1,19 +1,20 @@
 package GUI;
 
 import javax.swing.*;
-import com.jtattoo.plaf.bernstein.BernsteinLookAndFeel;
+
+import com.jtattoo.plaf.aero.AeroLookAndFeel;
 import java.awt.*;
 
 public class Gui extends JFrame {
-    private JButton one,two,three,four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, equal;
+    private JButton one,two,three,four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, remainder, equal;
     private JTextField textField;
     private JPanel firstPanel;
     private JFrame mainFrame;
 
     public Gui(){
-        // Jtattoo skin
+        // Jtattoo skin.   AcrylLookAndFeel  AeroLookAndFeel  AluminiumLookAndFeel  BernsteinLookAndFeel    FastLookAndFeel
         try {
-            UIManager.setLookAndFeel(new BernsteinLookAndFeel());
+            UIManager.setLookAndFeel(new AeroLookAndFeel());
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
@@ -38,11 +39,12 @@ public class Gui extends JFrame {
         minus = new JButton("-");
         mult = new JButton("*");
         divide = new JButton("/");
+        remainder = new JButton("%");
         equal = new JButton("=");
 
         Dimension numSize = new Dimension(75,50);
         Dimension actSize = new Dimension(30,50);
-        Dimension equalSize = new Dimension(155,50);
+        Dimension equalSize = new Dimension(120,50);
         one.setPreferredSize(numSize);
         two.setPreferredSize(numSize);
         three.setPreferredSize(numSize);
@@ -57,6 +59,7 @@ public class Gui extends JFrame {
         plus.setPreferredSize(actSize);
         minus.setPreferredSize(actSize);
         mult.setPreferredSize(actSize);
+        remainder.setPreferredSize(actSize);
         equal.setPreferredSize(equalSize);
 
 
@@ -67,7 +70,7 @@ public class Gui extends JFrame {
         firstPanel.add(one); firstPanel.add(two); firstPanel.add(three);firstPanel.add(divide);
         firstPanel.add(four); firstPanel.add(five); firstPanel.add(six);firstPanel.add(mult);
         firstPanel.add(seven); firstPanel.add(eight); firstPanel.add(nine);firstPanel.add(plus);
-        firstPanel.add(zero); firstPanel.add(equal); firstPanel.add(minus);
+        firstPanel.add(zero); firstPanel.add(equal); firstPanel.add(remainder); firstPanel.add(minus);
 
 
         // Window frame
