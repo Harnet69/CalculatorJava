@@ -10,6 +10,12 @@ import java.awt.*;
 public class Start {
 
     public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(new  BernsteinLookAndFeel());
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+        JFrame.setDefaultLookAndFeelDecorated(true);
         MyJButton button1 = new MyJButton("Кнопка1", 100, 50);
         JTextField myText = new JTextField(null,25);
         //myText.setBackground(Color.cyan);
