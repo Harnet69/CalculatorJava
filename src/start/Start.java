@@ -1,5 +1,6 @@
 package start;
 
+import GUI.Gui;
 import GUI.MyJButton;
 import GUI.MyJFrame;
 import GUI.MyJPanel;
@@ -10,7 +11,8 @@ import java.awt.*;
 public class Start {
 
     public static void main(String[] args) {
-        try {
+        Gui calc = new Gui();
+        /*try {
             UIManager.setLookAndFeel(new  BernsteinLookAndFeel());
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
@@ -23,6 +25,6 @@ public class Start {
         MyJPanel buttonsBlock = new MyJPanel(300,200, button1);
         buttonsBlock.setBackground(Color.CYAN);
 
-        MyJFrame frame1 = new MyJFrame("My Calculator", 500, 500, textField, buttonsBlock);
+        MyJFrame frame1 = new MyJFrame("My Calculator", 500, 500, textField, buttonsBlock);*/
     }
 }

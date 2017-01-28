@@ -9,8 +9,6 @@ public class MyJFrame extends JFrame {
         super(title);
         super.setSize(width, height);
         setLocationRelativeTo(null);
-        FlowLayout f1 = new FlowLayout();
-        super.setLayout(f1);
         super.add(textField, BorderLayout.NORTH);
         super.add(buttonsBlock, BorderLayout.SOUTH);
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
