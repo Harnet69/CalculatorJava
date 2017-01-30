@@ -10,15 +10,17 @@ import java.awt.event.ActionListener;
  * Listeners and actions for main frame
  */
 public class MainLogic {
-    private boolean choose = false, clickIsEqual = false;
+    private boolean choose = false;private boolean clickIsEqual = false;
     private String steat1, steat2, answerSteat; // first number, second number
     private double answer = 0.0;
-    private JButton one, two, three, four, five, six, seven, eight, nine, zero;
+    char oper = ' ';
+    private JButton one, two, three, four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, remainder, equal;
     private JTextField textField;
 
     public MainLogic() {
         Gui calc = new Gui();
         NumberButtons numb = new NumberButtons();
+        ActionButtons act = new ActionButtons();
         one = calc.getOne();
         two = calc.getTwo();
         three = calc.getThree();
@@ -29,11 +31,20 @@ public class MainLogic {
         eight = calc.getEight();
         nine = calc.getNine();
         zero = calc.getZero();
+        plus = calc.getPlus();
+        minus = calc.getMinus();
+        mult = calc.getMult();
+        divide = calc.getDivide();
+        remainder = calc.getRemainder();
+        equal = calc.getEqual();
         textField = calc.getTextField();
         one.addActionListener(numb); two.addActionListener(numb); three.addActionListener(numb);
         four.addActionListener(numb);five.addActionListener(numb);six.addActionListener(numb);
         seven.addActionListener(numb);eight.addActionListener(numb);nine.addActionListener(numb);
         zero.addActionListener(numb);
+        plus.addActionListener(act); minus.addActionListener(act); mult.addActionListener(act);
+        divide.addActionListener(act); remainder.addActionListener(act);equal.addActionListener(act);
+
     }
 
     public class NumberButtons implements ActionListener {
@@ -59,7 +70,7 @@ public class MainLogic {
                     }
                     //if "1" are't first
                     else {
-                        steat2 = steat1 + "1";
+                        steat2 = steat2 + "1";
                     }
                 }
             }
@@ -82,7 +93,7 @@ public class MainLogic {
                     }
                     //if "1" are't first
                     else {
-                        steat2 = steat1 + "2";
+                        steat2 = steat2 + "2";
                     }
                 }
             }
@@ -105,7 +116,7 @@ public class MainLogic {
                     }
                     //if "1" are't first
                     else {
-                        steat2 = steat1 + "3";
+                        steat2 = steat2 + "3";
                     }
                 }
             }
@@ -128,7 +139,7 @@ public class MainLogic {
                     }
                     //if "1" are't first
                     else {
-                        steat2 = steat1 + "4";
+                        steat2 = steat2 + "4";
                     }
                 }
             }
@@ -151,7 +162,7 @@ public class MainLogic {
                     }
                     //if "1" are't first
                     else {
-                        steat2 = steat1 + "5";
+                        steat2 = steat2 + "5";
                     }
                 }
             }
@@ -174,7 +185,7 @@ public class MainLogic {
                     }
                     //if "1" are't first
                     else {
-                        steat2 = steat1 + "6";
+                        steat2 = steat2 + "6";
                     }
                 }
             }
@@ -197,7 +208,7 @@ public class MainLogic {
                     }
                     //if "1" are't first
                     else {
-                        steat2 = steat1 + "7";
+                        steat2 = steat2 + "7";
                     }
                 }
             }
@@ -220,7 +231,7 @@ public class MainLogic {
                     }
                     //if "1" are't first
                     else {
-                        steat2 = steat1 + "8";
+                        steat2 = steat2 + "8";
                     }
                 }
             }
@@ -243,7 +254,7 @@ public class MainLogic {
                     }
                     //if "1" are't first
                     else {
-                        steat2 = steat1 + "9";
+                        steat2 = steat2 + "9";
                     }
                 }
             }
@@ -266,13 +277,10 @@ public class MainLogic {
                     }
                     //if "1" are't first
                     else {
-                        steat2 = steat1 + "0";
+                        steat2 = steat2 + "0";
                     }
                 }
             }
-            textField.setText("1");
-            textField.setText(steat2);
-
             if(clickIsEqual == false){
                 if (choose == false) {
                     textField.setText(steat1);
@@ -280,6 +288,83 @@ public class MainLogic {
             }
             else{
                 textField.setText(steat2);
+            }
+        }
+    }
+
+    public class ActionButtons implements ActionListener{
+
+        public void actionPerformed(ActionEvent event) {
+            JButton src = (JButton) event.getSource();
+
+            // Plus operation
+            if(src.equals(plus)){
+                if(steat1 == null){
+                    System.out.print("You must add number first");
+                }
+                else if (steat1 != null && steat2 == null){
+                    clickIsEqual = true;
+                    oper = '+';
+                }
+                else if(steat1 !=null && steat2 != null){
+                    System.out.print("This is freeware version, calculator supported only two operation!");
+                }
+            }
+
+            // Minus operation
+            if(src.equals(minus)){
+                if(steat1 == null){
+                    System.out.print("You must add number first");
+                }
+                else if (steat1 != null && steat2 == null){
+                    clickIsEqual = true;
+                    oper = '-';
+                }
+                else if(steat1 !=null && steat2 != null){
+                    System.out.print("This is basic version calculator, supported only two operation!");
+                }
+            }
+
+            // Mult operation
+            if(src.equals(mult)){
+                if(steat1 == null){
+                    System.out.print("You must add number first");
+                }
+                else if (steat1 != null && steat2 == null){
+                    clickIsEqual = true;
+                    oper = '*';
+                }
+                else if(steat1 !=null && steat2 != null){
+                    System.out.print("This is basic version calculator, supported only two operation!");
+                }
+            }
+
+            // Divide operation
+            if(src.equals(divide)){
+                if(steat1 == null){
+                    System.out.print("You must add number first");
+                }
+                else if (steat1 != null && steat2 == null){
+                    clickIsEqual = true;
+                    oper = '/';
+                }
+                else if(steat1 !=null && steat2 != null){
+                    System.out.print("This is basic version calculator, supported only two operation!");
+                }
+            }
+
+            // Divide operation
+            if(src.equals(remainder)){
+                if(steat1 == null){
+                    System.out.print("You must add number first");
+                }
+                else if (steat1 != null && steat2 == null){
+                    clickIsEqual = true;
+                    oper = '%';
+                }
+                else if(steat1 !=null && steat2 != null){
+                    System.out.print("This is basic version calculator, supported only two operation!");
+                }
             }
         }
     }

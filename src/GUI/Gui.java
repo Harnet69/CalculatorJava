@@ -43,12 +43,36 @@ public class Gui extends JFrame {
         return eight;
     }
 
+    public JButton getZero() {
+        return zero;
+    }
+
     public JButton getNine() {
         return nine;
     }
 
-    public JButton getZero() {
-        return zero;
+    public JButton getPlus() {
+        return plus;
+    }
+
+    public JButton getMinus() {
+        return minus;
+    }
+
+    public JButton getMult() {
+        return mult;
+    }
+
+    public JButton getDivide() {
+        return divide;
+    }
+
+    public JButton getRemainder() {
+        return remainder;
+    }
+
+    public JButton getEqual() {
+        return equal;
     }
 
     public JTextField getTextField() {
