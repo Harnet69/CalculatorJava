@@ -6,10 +6,14 @@ import com.jtattoo.plaf.aero.AeroLookAndFeel;
 import java.awt.*;
 
 public class Gui extends JFrame {
-    private JButton one,two,three,four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, remainder, equal;
+    protected JButton one,two,three,four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, remainder, equal;
     private JTextField textField;
     private JPanel firstPanel;
     private JFrame mainFrame;
+
+    public JButton getOne() {
+        return one;
+    }
 
     public Gui(){
         jtattooSkin();
@@ -45,7 +49,7 @@ public class Gui extends JFrame {
      * Create buttons and set their dimension
      */
 
-    private void createButtons(){
+    public void createButtons(){
         one = new JButton("1");
         two = new JButton("2");
         three = new JButton("3");
