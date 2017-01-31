@@ -385,7 +385,12 @@ public class MainLogic {
 
                     // Convert double format answer to string for display in textField
                     strAnswer = Double.toString(answer);
-                    textField.setText(strAnswer);
+                        if(d2 == 0.00 && oper == '/'){
+                            textField.setText("ERROR! Divide by NULL");
+                        }
+                        else{
+                            textField.setText(strAnswer);
+                        }
                 }
             }
         }

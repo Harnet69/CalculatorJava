@@ -6,7 +6,7 @@ import com.jtattoo.plaf.aero.AeroLookAndFeel;
 import java.awt.*;
 
 public class Gui extends JFrame {
-    private JButton one, two, three, four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, remainder, equal;
+    private JButton one, two, three, four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, remainder, equal, cancel;
     private JTextField textField;
     private JPanel firstPanel;
     private JFrame mainFrame;
@@ -135,10 +135,12 @@ public class Gui extends JFrame {
         divide = new JButton("/");
         remainder = new JButton("%");
         equal = new JButton("=");
+        cancel = new JButton("CE/C");
 
         Dimension numSize = new Dimension(75,50);
         Dimension actSize = new Dimension(30,50);
         Dimension equalSize = new Dimension(120,50);
+        Dimension funcSize = new Dimension(75,30);
         one.setPreferredSize(numSize);
         two.setPreferredSize(numSize);
         three.setPreferredSize(numSize);
@@ -155,6 +157,8 @@ public class Gui extends JFrame {
         mult.setPreferredSize(actSize);
         remainder.setPreferredSize(actSize);
         equal.setPreferredSize(equalSize);
+        cancel.setPreferredSize(funcSize);
+        cancel.setBackground(Color.pink);
     }
 
     /**
@@ -168,6 +172,7 @@ public class Gui extends JFrame {
         firstPanel.add(four); firstPanel.add(five); firstPanel.add(six);firstPanel.add(mult);
         firstPanel.add(seven); firstPanel.add(eight); firstPanel.add(nine);firstPanel.add(plus);
         firstPanel.add(zero); firstPanel.add(equal); firstPanel.add(remainder); firstPanel.add(minus);
+        firstPanel.add(cancel);
     }
 
     /**
@@ -178,7 +183,7 @@ public class Gui extends JFrame {
         mainFrame = new JFrame("My Calculator");
 //        mainFrame.add(firstPanel);
         mainFrame.setContentPane(firstPanel); // instead .add
-        mainFrame.setSize(300,285);
+        mainFrame.setSize(300,320);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setResizable(false);
