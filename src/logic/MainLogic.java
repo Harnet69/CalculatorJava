@@ -16,7 +16,7 @@ public class MainLogic {
     private double answer = 0.0;
     private String strAnswer;
     char oper = ' ';
-    private JButton one, two, three, four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, remainder, equal, cancel;
+    private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, plus, minus, mult, divide, remainder, equal, cancel;
     private JTextField textField;
 
     public MainLogic() {
@@ -33,6 +33,7 @@ public class MainLogic {
         eight = calc.getEight();
         nine = calc.getNine();
         zero = calc.getZero();
+        decim = calc.getDecim();
         plus = calc.getPlus();
         minus = calc.getMinus();
         mult = calc.getMult();
@@ -51,6 +52,7 @@ public class MainLogic {
         eight.addActionListener(numb);
         nine.addActionListener(numb);
         zero.addActionListener(numb);
+        decim.addActionListener(numb);
         plus.addActionListener(act);
         minus.addActionListener(act);
         mult.addActionListener(act);
@@ -284,6 +286,48 @@ public class MainLogic {
                     }
                 }
             }
+
+            // Press decimal button
+            if (src.equals(decim)) {
+                // if it is first operation (not any operation yet)
+                if (clickIsEqual == false) {
+                    // if not another statement
+                    if (steat1 == null) {
+                        steat1 = "0.";
+                    }
+                    //if number have decimal symbol ","
+                    else {
+                        if(steat1 != null){
+                            if(steat1.contains(".")){
+                                System.out.println("You have decimal symbol");
+                            }
+                            else{
+                                steat1 +=".";
+                            }
+                        }
+
+                    }
+                } else {
+                    // if not another statement
+                    if (steat2 == null) {
+                        steat2 = "0.";
+                    }
+                    //if number have decimal symbol ","
+                    else {
+                        if(steat2 != null){
+                            if(steat2.contains(".")){
+                                System.out.println("You have decimal symbol");
+                            }
+                            else{
+                                steat2 +=".";
+                            }
+                        }
+
+                    }
+                }
+            }
+
+
             if (clickIsEqual == false) {
                 if (choose == false) {
                     textField.setText(steat1);
@@ -361,7 +405,7 @@ public class MainLogic {
 
             // Cancel operation
             if (src.equals(cancel)) {
-                steat1 = null; steat2 = null; clickIsEqual = false; oper = ' '; textField.setText(null);;
+                steat1 = null; steat2 = null; strAnswer = null;clickIsEqual = false; oper = ' '; textField.setText(null);
                 /*if (steat1 == null) {
                     System.out.print("You must add number first");
                 } else if (steat1 != null && steat2 == null) {

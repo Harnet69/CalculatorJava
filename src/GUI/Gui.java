@@ -6,7 +6,7 @@ import com.jtattoo.plaf.aero.AeroLookAndFeel;
 import java.awt.*;
 
 public class Gui extends JFrame {
-    private JButton one, two, three, four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, remainder, equal, cancel;
+    private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, plus, minus, mult, divide, remainder, equal, cancel;
     private JTextField textField;
     private JPanel firstPanel;
     private JFrame mainFrame;
@@ -46,6 +46,8 @@ public class Gui extends JFrame {
     public JButton getZero() {
         return zero;
     }
+
+    public JButton getDecim() { return decim; }
 
     public JButton getNine() {
         return nine;
@@ -131,6 +133,7 @@ public class Gui extends JFrame {
         eight = new JButton("8");
         nine = new JButton("9");
         zero = new JButton("0");
+        decim = new JButton(",");
         plus = new JButton("+");
         minus = new JButton("-");
         mult = new JButton("*");
@@ -153,6 +156,7 @@ public class Gui extends JFrame {
         eight.setPreferredSize(numSize);
         nine.setPreferredSize(numSize);
         zero.setPreferredSize(numSize);
+        decim.setPreferredSize(actSize);
         divide.setPreferredSize(actSize);
         plus.setPreferredSize(actSize);
         minus.setPreferredSize(actSize);
@@ -173,8 +177,8 @@ public class Gui extends JFrame {
         firstPanel.add(one); firstPanel.add(two); firstPanel.add(three);firstPanel.add(divide);
         firstPanel.add(four); firstPanel.add(five); firstPanel.add(six);firstPanel.add(mult);
         firstPanel.add(seven); firstPanel.add(eight); firstPanel.add(nine);firstPanel.add(plus);
-        firstPanel.add(zero); firstPanel.add(equal); firstPanel.add(remainder); firstPanel.add(minus);
-        firstPanel.add(cancel);
+        firstPanel.add(zero); firstPanel.add(decim); firstPanel.add(equal); firstPanel.add(minus);
+        firstPanel.add(cancel); firstPanel.add(remainder);
     }
 
     /**
@@ -185,7 +189,7 @@ public class Gui extends JFrame {
         mainFrame = new JFrame("My Calculator");
 //        mainFrame.add(firstPanel);
         mainFrame.setContentPane(firstPanel); // instead .add
-        mainFrame.setSize(300,320);
+        mainFrame.setSize(300,330);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setResizable(false);
