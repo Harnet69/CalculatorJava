@@ -51,9 +51,7 @@ public class Gui extends JFrame {
         return nine;
     }
 
-    public JButton getPlus() {
-        return plus;
-    }
+    public JButton getPlus() { return plus; }
 
     public JButton getMinus() {
         return minus;
@@ -73,6 +71,10 @@ public class Gui extends JFrame {
 
     public JButton getEqual() {
         return equal;
+    }
+
+    public JButton getCancel() {
+        return cancel;
     }
 
     public JTextField getTextField() {

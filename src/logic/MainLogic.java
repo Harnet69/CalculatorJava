@@ -16,7 +16,7 @@ public class MainLogic {
     private double answer = 0.0;
     private String strAnswer;
     char oper = ' ';
-    private JButton one, two, three, four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, remainder, equal;
+    private JButton one, two, three, four, five, six, seven, eight, nine, zero, plus, minus, mult, divide, remainder, equal, cancel;
     private JTextField textField;
 
     public MainLogic() {
@@ -39,6 +39,7 @@ public class MainLogic {
         divide = calc.getDivide();
         remainder = calc.getRemainder();
         equal = calc.getEqual();
+        cancel = calc.getCancel();
         textField = calc.getTextField();
         one.addActionListener(numb);
         two.addActionListener(numb);
@@ -56,7 +57,7 @@ public class MainLogic {
         divide.addActionListener(act);
         remainder.addActionListener(act);
         equal.addActionListener(act);
-
+        cancel.addActionListener(act);
     }
 
     public class NumberButtons implements ActionListener {
@@ -356,6 +357,19 @@ public class MainLogic {
                 } else if (steat1 != null && steat2 != null) {
                     System.out.print("This is basic version calculator, supported only two operation!");
                 }
+            }
+
+            // Cancel operation
+            if (src.equals(cancel)) {
+                steat1 = null; steat2 = null; clickIsEqual = false; oper = ' '; textField.setText(null);;
+                /*if (steat1 == null) {
+                    System.out.print("You must add number first");
+                } else if (steat1 != null && steat2 == null) {
+                    clickIsEqual = true;
+                    oper = '%';
+                } else if (steat1 != null && steat2 != null) {
+                    System.out.print("This is basic version calculator, supported only two operation!");
+                }*/
             }
 
             // Equal operation
