@@ -16,7 +16,7 @@ public class MainLogic {
     private double answer = 0.0;
     private String strAnswer;
     char oper = ' ';
-    private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, plus, minus, mult, divide, remainder, equal, cancel;
+    private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, plus, minus, mult, divide, remainder, makeNegative, equal, cancel;
     private JTextField textField;
 
     public MainLogic() {
@@ -39,6 +39,7 @@ public class MainLogic {
         mult = calc.getMult();
         divide = calc.getDivide();
         remainder = calc.getRemainder();
+        makeNegative = calc.getMakeNegative();
         equal = calc.getEqual();
         cancel = calc.getCancel();
         textField = calc.getTextField();
@@ -60,6 +61,7 @@ public class MainLogic {
         remainder.addActionListener(act);
         equal.addActionListener(act);
         cancel.addActionListener(act);
+        makeNegative.addActionListener(numb);
     }
 
     public class NumberButtons implements ActionListener {
@@ -307,11 +309,11 @@ public class MainLogic {
                         }
                     }
                 } else {
-                    // if not another statement
+
                     if (steat2 == null) {
                         steat2 = "0.";
                     }
-                    //if number have decimal symbol ","
+
                     else {
                         if(steat2 != null){
                             if(steat2.contains(".")){
@@ -326,6 +328,32 @@ public class MainLogic {
                 }
             }
 
+            // Press "negative" button
+            if(src.equals(makeNegative)){
+                if (clickIsEqual == false) {
+                    // if not another statement
+                    if (steat1 == null) {
+                        steat1 = "-";
+                    }
+                    //if "1" are't first
+                    else if(steat1 != null && steat1.startsWith("-")) {
+                        steat1 = steat1.substring(1);
+                    }
+                    else {
+                        steat1 = "-" + steat1;
+                    }
+                } else {
+                    if (steat2 == null) {
+                        steat2 = "-";
+                    }
+                    else if(steat2 !=null && steat2.startsWith("-")) {
+                        steat2 = steat2.substring(1);
+                    }
+                    else{
+                        steat2 = "-" + steat2;
+                    }
+                }
+            }
 
             if (clickIsEqual == false) {
                 if (choose == false) {
