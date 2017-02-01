@@ -6,7 +6,7 @@ import com.jtattoo.plaf.aero.AeroLookAndFeel;
 import java.awt.*;
 
 public class Gui extends JFrame {
-    private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, plus, minus, mult, divide, remainder, equal, cancel;
+        private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, makeNegative, plus, minus, mult, divide, remainder, equal, cancel;
     private JTextField textField;
     private JPanel firstPanel;
     private JFrame mainFrame;
@@ -70,6 +70,8 @@ public class Gui extends JFrame {
     public JButton getRemainder() {
         return remainder;
     }
+
+    public  JButton getMakeNegative() {return makeNegative; }
 
     public JButton getEqual() {
         return equal;
@@ -141,11 +143,12 @@ public class Gui extends JFrame {
         remainder = new JButton("%");
         equal = new JButton("=");
         cancel = new JButton("CE/C");
+        makeNegative = new JButton("+/-");
 
         Dimension numSize = new Dimension(75,50);
         Dimension actSize = new Dimension(30,50);
         Dimension equalSize = new Dimension(120,50);
-        Dimension funcSize = new Dimension(75,30);
+        Dimension funcSize = new Dimension(75,50);
         one.setPreferredSize(numSize);
         two.setPreferredSize(numSize);
         three.setPreferredSize(numSize);
@@ -162,6 +165,7 @@ public class Gui extends JFrame {
         minus.setPreferredSize(actSize);
         mult.setPreferredSize(actSize);
         remainder.setPreferredSize(actSize);
+        makeNegative.setPreferredSize(numSize);
         equal.setPreferredSize(equalSize);
         cancel.setPreferredSize(funcSize);
         cancel.setBackground(Color.pink);
@@ -178,7 +182,7 @@ public class Gui extends JFrame {
         firstPanel.add(four); firstPanel.add(five); firstPanel.add(six);firstPanel.add(mult);
         firstPanel.add(seven); firstPanel.add(eight); firstPanel.add(nine);firstPanel.add(plus);
         firstPanel.add(zero); firstPanel.add(decim); firstPanel.add(equal); firstPanel.add(minus);
-        firstPanel.add(cancel); firstPanel.add(remainder);
+        firstPanel.add(cancel); firstPanel.add(makeNegative); firstPanel.add(remainder);
     }
 
     /**

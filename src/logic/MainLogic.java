@@ -404,18 +404,16 @@ public class MainLogic {
 
             // Cancel operation
             if (src.equals(cancel)) {
-                steat1 = null; steat2 = null; strAnswer = null;clickIsEqual = false; oper = ' '; textField.setText(null);
-                /*if (steat1 == null) {
-                    System.out.print("You must add number first");
-                } else if (steat1 != null && steat2 == null) {
-                    clickIsEqual = true;
-                    oper = '%';
-                } else if (steat1 != null && steat2 != null) {
-                    System.out.print("This is basic version calculator, supported only two operation!");
-                }*/
+                steat1 = null;
+                steat2 = null;
+                strAnswer = null;
+                clickIsEqual = false;
+                oper = ' ';
+                textField.setText(null);
+
             }
 
-            // Equal operation
+            // Equal(calculate) operation
             if (src.equals(equal)) {
                 if (steat1 == null) {
                     System.out.print("You must add number first");
