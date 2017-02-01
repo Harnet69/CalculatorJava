@@ -305,7 +305,6 @@ public class MainLogic {
                                 steat1 +=".";
                             }
                         }
-
                     }
                 } else {
                     // if not another statement
