@@ -16,7 +16,8 @@ public class MainLogic {
     private double answer = 0.0;
     private String strAnswer;
     char oper = ' ';
-    private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, plus, minus, mult, divide, remainder, makeNegative, equal, cancel;
+    private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, plus, minus, mult,
+            divide, remainder, makeNegative, backSpace, equal, cancel;
     private JTextField textField;
 
     public MainLogic() {
@@ -40,6 +41,7 @@ public class MainLogic {
         divide = calc.getDivide();
         remainder = calc.getRemainder();
         makeNegative = calc.getMakeNegative();
+        backSpace = calc.getBackSpace();
         equal = calc.getEqual();
         cancel = calc.getCancel();
         textField = calc.getTextField();
@@ -62,13 +64,14 @@ public class MainLogic {
         equal.addActionListener(act);
         cancel.addActionListener(act);
         makeNegative.addActionListener(numb);
+        backSpace.addActionListener(numb);
     }
 
     public class NumberButtons implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             JButton src = (JButton) event.getSource();
 
-            // if button "1" is pressed
+            // Press "1" button
             if (src.equals(one)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
@@ -91,6 +94,7 @@ public class MainLogic {
                 }
             }
 
+            // Press "2" button
             if (src.equals(two)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
@@ -113,6 +117,7 @@ public class MainLogic {
                 }
             }
 
+            // Press "3" button
             if (src.equals(three)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
@@ -135,6 +140,7 @@ public class MainLogic {
                 }
             }
 
+            // Press "4" button
             if (src.equals(four)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
@@ -157,6 +163,7 @@ public class MainLogic {
                 }
             }
 
+            // Press "5" button
             if (src.equals(five)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
@@ -179,6 +186,7 @@ public class MainLogic {
                 }
             }
 
+            // Press "6" button
             if (src.equals(six)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
@@ -201,6 +209,7 @@ public class MainLogic {
                 }
             }
 
+            // Press "7" button
             if (src.equals(seven)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
@@ -223,6 +232,7 @@ public class MainLogic {
                 }
             }
 
+            // Press "8" button
             if (src.equals(eight)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
@@ -245,6 +255,7 @@ public class MainLogic {
                 }
             }
 
+            // Press "9" button
             if (src.equals(nine)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
@@ -267,6 +278,7 @@ public class MainLogic {
                 }
             }
 
+            // Press "0" button
             if (src.equals(zero)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
@@ -355,6 +367,26 @@ public class MainLogic {
                 }
             }
 
+            // Press "BackSpace" button
+            if(src.equals(backSpace)){
+                if(clickIsEqual == false){
+                    if(steat1 == null){
+                        System.out.println("Nothing to delete");
+                    }
+                    else{
+                        steat1 = steat1.substring(0, steat1.length()-1);
+                    }
+                }
+                else{
+                    if(steat2 == null){
+                        System.out.println("Nothing to delete");
+                    }
+                    else{
+                        steat2 = steat2.substring(0, steat2.length()-1);
+                    }
+                }
+            }
+
             if (clickIsEqual == false) {
                 if (choose == false) {
                     textField.setText(steat1);
@@ -394,7 +426,7 @@ public class MainLogic {
                 }
             }
 
-            // Mult operation
+            // Multiple operation
             if (src.equals(mult)) {
                 if (steat1 == null) {
                     System.out.print("You must add number first");
@@ -418,7 +450,7 @@ public class MainLogic {
                 }
             }
 
-            // Divide operation
+            // Remainder(remained after dividing) operation
             if (src.equals(remainder)) {
                 if (steat1 == null) {
                     System.out.print("You must add number first");
@@ -430,7 +462,7 @@ public class MainLogic {
                 }
             }
 
-            // Cancel operation
+            // Cancel(Clear display) operation
             if (src.equals(cancel)) {
                 steat1 = null;
                 steat2 = null;
@@ -449,7 +481,7 @@ public class MainLogic {
                     System.out.print("You must both number first");
                 } else if (steat1 != null && steat2 != null) {
                     double d1 = 0.0, d2 = 0.0;
-                    // Convert string value to the double
+                    // Convert string value to the double for calculate it
                     d1 = Double.parseDouble(steat1);
                     d2 = Double.parseDouble(steat2);
 

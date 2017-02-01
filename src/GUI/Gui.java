@@ -6,7 +6,8 @@ import com.jtattoo.plaf.aero.AeroLookAndFeel;
 import java.awt.*;
 
 public class Gui extends JFrame {
-        private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, makeNegative, plus, minus, mult, divide, remainder, equal, cancel;
+        private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, makeNegative, backSpace, plus, minus,
+                mult, divide, remainder, equal, cancel;
     private JTextField textField;
     private JPanel firstPanel;
     private JFrame mainFrame;
@@ -81,6 +82,10 @@ public class Gui extends JFrame {
         return cancel;
     }
 
+    public JButton getBackSpace() {
+        return backSpace;
+    }
+
     public JTextField getTextField() {
         return textField;
     }
@@ -144,6 +149,7 @@ public class Gui extends JFrame {
         equal = new JButton("=");
         cancel = new JButton("CE/C");
         makeNegative = new JButton("+/-");
+        backSpace = new JButton("Back");
 
         Dimension numSize = new Dimension(75,50);
         Dimension actSize = new Dimension(30,50);
@@ -166,6 +172,7 @@ public class Gui extends JFrame {
         mult.setPreferredSize(actSize);
         remainder.setPreferredSize(actSize);
         makeNegative.setPreferredSize(numSize);
+        backSpace.setPreferredSize(numSize);
         equal.setPreferredSize(equalSize);
         cancel.setPreferredSize(funcSize);
         cancel.setBackground(Color.pink);
@@ -182,7 +189,7 @@ public class Gui extends JFrame {
         firstPanel.add(four); firstPanel.add(five); firstPanel.add(six);firstPanel.add(mult);
         firstPanel.add(seven); firstPanel.add(eight); firstPanel.add(nine);firstPanel.add(plus);
         firstPanel.add(zero); firstPanel.add(decim); firstPanel.add(equal); firstPanel.add(minus);
-        firstPanel.add(cancel); firstPanel.add(makeNegative); firstPanel.add(remainder);
+        firstPanel.add(cancel);firstPanel.add(backSpace); firstPanel.add(makeNegative); firstPanel.add(remainder);
     }
 
     /**
@@ -193,7 +200,7 @@ public class Gui extends JFrame {
         mainFrame = new JFrame("My Calculator");
 //        mainFrame.add(firstPanel);
         mainFrame.setContentPane(firstPanel); // instead .add
-        mainFrame.setSize(300,330);
+        mainFrame.setSize(300,335);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setResizable(false);
