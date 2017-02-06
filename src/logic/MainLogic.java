@@ -7,12 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Listeners and actions for main frame
+ * Class for arithmetic operations. Listeners and actions for main frame
  */
 public class MainLogic {
     private boolean choose = false;
     private boolean clickIsEqual = false;
-    private String steat1, steat2, answerSteat; // first number, second number
+    private String steat1, steat2; // first number, second number
     private double answer = 0.0;
     private String strAnswer;
     char oper = ' ';
@@ -20,6 +20,9 @@ public class MainLogic {
             divide, remainder, makeNegative, backSpace, equal, cancel;
     private JTextField textField;
 
+    /**
+     * Call GUI
+     */
     public MainLogic() {
         Gui calc = new Gui();
         NumberButtons numb = new NumberButtons();
@@ -67,7 +70,15 @@ public class MainLogic {
         backSpace.addActionListener(numb);
     }
 
+    /**
+     * Add listener for pushing number button
+     */
     public class NumberButtons implements ActionListener {
+        /**
+         * Binding number buttons and clicking actions
+         *
+         * @param event
+         */
         public void actionPerformed(ActionEvent event) {
             JButton src = (JButton) event.getSource();
 
@@ -75,7 +86,7 @@ public class MainLogic {
             if (src.equals(one)) {
                 // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
-                    // if not another statement
+                    // if not another number
                     if (steat1 == null) {
                         steat1 = "1";
                     }
@@ -86,9 +97,7 @@ public class MainLogic {
                 } else {
                     if (steat2 == null) {
                         steat2 = "1";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat2 = steat2 + "1";
                     }
                 }
@@ -96,22 +105,16 @@ public class MainLogic {
 
             // Press "2" button
             if (src.equals(two)) {
-                // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
-                    // if not another statement
                     if (steat1 == null) {
                         steat1 = "2";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat1 = steat1 + "2";
                     }
                 } else {
                     if (steat2 == null) {
                         steat2 = "2";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat2 = steat2 + "2";
                     }
                 }
@@ -119,22 +122,16 @@ public class MainLogic {
 
             // Press "3" button
             if (src.equals(three)) {
-                // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
-                    // if not another statement
                     if (steat1 == null) {
                         steat1 = "3";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat1 = steat1 + "3";
                     }
                 } else {
                     if (steat2 == null) {
                         steat2 = "3";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat2 = steat2 + "3";
                     }
                 }
@@ -142,22 +139,16 @@ public class MainLogic {
 
             // Press "4" button
             if (src.equals(four)) {
-                // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
-                    // if not another statement
                     if (steat1 == null) {
                         steat1 = "4";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat1 = steat1 + "4";
                     }
                 } else {
                     if (steat2 == null) {
                         steat2 = "4";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat2 = steat2 + "4";
                     }
                 }
@@ -165,22 +156,16 @@ public class MainLogic {
 
             // Press "5" button
             if (src.equals(five)) {
-                // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
-                    // if not another statement
                     if (steat1 == null) {
                         steat1 = "5";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat1 = steat1 + "5";
                     }
                 } else {
                     if (steat2 == null) {
                         steat2 = "5";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat2 = steat2 + "5";
                     }
                 }
@@ -188,22 +173,16 @@ public class MainLogic {
 
             // Press "6" button
             if (src.equals(six)) {
-                // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
-                    // if not another statement
                     if (steat1 == null) {
                         steat1 = "6";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat1 = steat1 + "6";
                     }
                 } else {
                     if (steat2 == null) {
                         steat2 = "6";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat2 = steat2 + "6";
                     }
                 }
@@ -211,22 +190,16 @@ public class MainLogic {
 
             // Press "7" button
             if (src.equals(seven)) {
-                // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
-                    // if not another statement
                     if (steat1 == null) {
                         steat1 = "7";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat1 = steat1 + "7";
                     }
                 } else {
                     if (steat2 == null) {
                         steat2 = "7";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat2 = steat2 + "7";
                     }
                 }
@@ -234,22 +207,16 @@ public class MainLogic {
 
             // Press "8" button
             if (src.equals(eight)) {
-                // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
-                    // if not another statement
                     if (steat1 == null) {
                         steat1 = "8";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat1 = steat1 + "8";
                     }
                 } else {
                     if (steat2 == null) {
                         steat2 = "8";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat2 = steat2 + "8";
                     }
                 }
@@ -257,22 +224,16 @@ public class MainLogic {
 
             // Press "9" button
             if (src.equals(nine)) {
-                // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
-                    // if not another statement
                     if (steat1 == null) {
                         steat1 = "9";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat1 = steat1 + "9";
                     }
                 } else {
                     if (steat2 == null) {
                         steat2 = "9";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat2 = steat2 + "9";
                     }
                 }
@@ -280,22 +241,16 @@ public class MainLogic {
 
             // Press "0" button
             if (src.equals(zero)) {
-                // if it is first operation (not any operation yet)
                 if (clickIsEqual == false) {
-                    // if not another statement
                     if (steat1 == null) {
                         steat1 = "0";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat1 = steat1 + "0";
                     }
                 } else {
                     if (steat2 == null) {
                         steat2 = "0";
-                    }
-                    //if "1" are't first
-                    else {
+                    } else {
                         steat2 = steat2 + "0";
                     }
                 }
@@ -309,14 +264,13 @@ public class MainLogic {
                     if (steat1 == null) {
                         steat1 = "0.";
                     }
-                    //if number have decimal symbol ","
+                    //if number have decimal symbol
                     else {
-                        if(steat1 != null){
-                            if(steat1.contains(".")){
+                        if (steat1 != null) {
+                            if (steat1.contains(".")) {
                                 System.out.println("You have decimal symbol");
-                            }
-                            else{
-                                steat1 +=".";
+                            } else {
+                                steat1 += ".";
                             }
                         }
                     }
@@ -324,15 +278,12 @@ public class MainLogic {
 
                     if (steat2 == null) {
                         steat2 = "0.";
-                    }
-
-                    else {
-                        if(steat2 != null){
-                            if(steat2.contains(".")){
+                    } else {
+                        if (steat2 != null) {
+                            if (steat2.contains(".")) {
                                 System.out.println("You have decimal symbol");
-                            }
-                            else{
-                                steat2 +=".";
+                            } else {
+                                steat2 += ".";
                             }
                         }
 
@@ -341,48 +292,42 @@ public class MainLogic {
             }
 
             // Press "negative" button
-            if(src.equals(makeNegative)){
+            if (src.equals(makeNegative)) {
                 if (clickIsEqual == false) {
                     // if not another statement
                     if (steat1 == null) {
                         steat1 = "-";
                     }
                     //if "1" are't first
-                    else if(steat1 != null && steat1.startsWith("-")) {
+                    else if (steat1 != null && steat1.startsWith("-")) {
                         steat1 = steat1.substring(1);
-                    }
-                    else {
+                    } else {
                         steat1 = "-" + steat1;
                     }
                 } else {
                     if (steat2 == null) {
                         steat2 = "-";
-                    }
-                    else if(steat2 !=null && steat2.startsWith("-")) {
+                    } else if (steat2 != null && steat2.startsWith("-")) {
                         steat2 = steat2.substring(1);
-                    }
-                    else{
+                    } else {
                         steat2 = "-" + steat2;
                     }
                 }
             }
 
             // Press "BackSpace" button
-            if(src.equals(backSpace)){
-                if(clickIsEqual == false){
-                    if(steat1 == null){
+            if (src.equals(backSpace)) {
+                if (clickIsEqual == false) {
+                    if (steat1 == null) {
                         System.out.println("Nothing to delete");
+                    } else {
+                        steat1 = steat1.substring(0, steat1.length() - 1);
                     }
-                    else{
-                        steat1 = steat1.substring(0, steat1.length()-1);
-                    }
-                }
-                else{
-                    if(steat2 == null){
+                } else {
+                    if (steat2 == null) {
                         System.out.println("Nothing to delete");
-                    }
-                    else{
-                        steat2 = steat2.substring(0, steat2.length()-1);
+                    } else {
+                        steat2 = steat2.substring(0, steat2.length() - 1);
                     }
                 }
             }
@@ -397,8 +342,15 @@ public class MainLogic {
         }
     }
 
+    /**
+     * Add listener for pushing action button
+     */
     public class ActionButtons implements ActionListener {
-
+        /**
+         * Binding action buttons and clicking actions
+         *
+         * @param event
+         */
         public void actionPerformed(ActionEvent event) {
             JButton src = (JButton) event.getSource();
 
@@ -485,27 +437,31 @@ public class MainLogic {
                     d1 = Double.parseDouble(steat1);
                     d2 = Double.parseDouble(steat2);
 
-                    switch(oper){
+                    switch (oper) {
                         case '+':
-                            answer = d1 + d2; break;
+                            answer = d1 + d2;
+                            break;
                         case '-':
-                            answer = d1 - d2; break;
+                            answer = d1 - d2;
+                            break;
                         case '/':
-                            answer = d1 / d2; break;
+                            answer = d1 / d2;
+                            break;
                         case '*':
-                            answer = d1 * d2; break;
+                            answer = d1 * d2;
+                            break;
                         case '%':
-                            answer = d1 % d2; break;
+                            answer = d1 % d2;
+                            break;
                     }
 
                     // Convert double format answer to string for display in textField
                     strAnswer = Double.toString(answer);
-                        if(d2 == 0.00 && oper == '/'){
-                            textField.setText("ERROR! Divide by NULL");
-                        }
-                        else{
-                            textField.setText(strAnswer);
-                        }
+                    if (d2 == 0.00 && oper == '/') {
+                        textField.setText("ERROR! Divide by NULL");
+                    } else {
+                        textField.setText(strAnswer);
+                    }
                 }
             }
         }

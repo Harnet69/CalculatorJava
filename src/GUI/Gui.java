@@ -3,11 +3,14 @@ package GUI;
 import javax.swing.*;
 
 import com.jtattoo.plaf.aero.AeroLookAndFeel;
+
 import java.awt.*;
 
+/**
+ * Grafic user interface class on SWING library
+ */
 public class Gui extends JFrame {
-        private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, makeNegative, backSpace, plus, minus,
-                mult, divide, remainder, equal, cancel;
+    private JButton one, two, three, four, five, six, seven, eight, nine, zero, decim, makeNegative, backSpace, plus, minus, mult, divide, remainder, equal, cancel;
     private JTextField textField;
     private JPanel firstPanel;
     private JFrame mainFrame;
@@ -48,13 +51,17 @@ public class Gui extends JFrame {
         return zero;
     }
 
-    public JButton getDecim() { return decim; }
+    public JButton getDecim() {
+        return decim;
+    }
 
     public JButton getNine() {
         return nine;
     }
 
-    public JButton getPlus() { return plus; }
+    public JButton getPlus() {
+        return plus;
+    }
 
     public JButton getMinus() {
         return minus;
@@ -72,7 +79,9 @@ public class Gui extends JFrame {
         return remainder;
     }
 
-    public  JButton getMakeNegative() {return makeNegative; }
+    public JButton getMakeNegative() {
+        return makeNegative;
+    }
 
     public JButton getEqual() {
         return equal;
@@ -94,8 +103,10 @@ public class Gui extends JFrame {
         this.textField = textField;
     }
 
-
-    public Gui(){
+    /***
+     * Constructor build Frame, Buttons and textarea for displaying values
+     */
+    public Gui() {
         jtattooSkin();
         createTextField();
         createButtons();
@@ -104,11 +115,11 @@ public class Gui extends JFrame {
     }
 
     /**
-     * Possible Jtattoo skin : Jtattoo skin, AcrylLookAndFeel, AeroLookAndFeel, AluminiumLookAndFeel,
+     * Setting skins GUI. Possible Jtattoo skin : Jtattoo skin, AcrylLookAndFeel, AeroLookAndFeel, AluminiumLookAndFeel,
      * BernsteinLookAndFeel, FastLookAndFeel, HiFiLookAndFeel, McWinLookAndFeel, MintLookAndFeel,
      * NoireLookAndFeel, SmartLookAndFeel, LunaLookAndFeel, TextureLookAndFeel
      */
-    private void jtattooSkin(){
+    private void jtattooSkin() {
         try {
             UIManager.setLookAndFeel(new AeroLookAndFeel());
         } catch (UnsupportedLookAndFeelException e) {
@@ -118,9 +129,9 @@ public class Gui extends JFrame {
     }
 
     /**
-     * Textfield to show action
+     * Building textfield. Changing second agrument, can change the number of displayed digits
      */
-    private void createTextField(){
+    private void createTextField() {
         textField = new JTextField(null, 24);
         textField.setEditable(false);
     }
@@ -129,7 +140,7 @@ public class Gui extends JFrame {
      * Create buttons and set their dimension
      */
 
-    public void createButtons(){
+    public void createButtons() {
         one = new JButton("1");
         two = new JButton("2");
         three = new JButton("3");
@@ -151,10 +162,10 @@ public class Gui extends JFrame {
         makeNegative = new JButton("+/-");
         backSpace = new JButton("Back");
 
-        Dimension numSize = new Dimension(75,50);
-        Dimension actSize = new Dimension(30,50);
-        Dimension equalSize = new Dimension(120,50);
-        Dimension funcSize = new Dimension(75,50);
+        Dimension numSize = new Dimension(75, 50);
+        Dimension actSize = new Dimension(30, 50);
+        Dimension equalSize = new Dimension(120, 50);
+        Dimension funcSize = new Dimension(75, 50);
         one.setPreferredSize(numSize);
         two.setPreferredSize(numSize);
         three.setPreferredSize(numSize);
@@ -179,28 +190,43 @@ public class Gui extends JFrame {
     }
 
     /**
-     * Create panel
+     * Create panel, there determines the order of the buttons
      */
-    private void createPanel(){
+    private void createPanel() {
         firstPanel = new JPanel();
         firstPanel.setLayout(new FlowLayout());
         firstPanel.add(textField, BorderLayout.NORTH);
-        firstPanel.add(one); firstPanel.add(two); firstPanel.add(three);firstPanel.add(divide);
-        firstPanel.add(four); firstPanel.add(five); firstPanel.add(six);firstPanel.add(mult);
-        firstPanel.add(seven); firstPanel.add(eight); firstPanel.add(nine);firstPanel.add(plus);
-        firstPanel.add(zero); firstPanel.add(decim); firstPanel.add(equal); firstPanel.add(minus);
-        firstPanel.add(cancel);firstPanel.add(backSpace); firstPanel.add(makeNegative); firstPanel.add(remainder);
+        firstPanel.add(one);
+        firstPanel.add(two);
+        firstPanel.add(three);
+        firstPanel.add(divide);
+        firstPanel.add(four);
+        firstPanel.add(five);
+        firstPanel.add(six);
+        firstPanel.add(mult);
+        firstPanel.add(seven);
+        firstPanel.add(eight);
+        firstPanel.add(nine);
+        firstPanel.add(plus);
+        firstPanel.add(zero);
+        firstPanel.add(decim);
+        firstPanel.add(equal);
+        firstPanel.add(minus);
+        firstPanel.add(cancel);
+        firstPanel.add(backSpace);
+        firstPanel.add(makeNegative);
+        firstPanel.add(remainder);
     }
 
     /**
-     * Create main frame
+     * Create main frame. In the method mainFrame.setSize() give a possibility to resize the main window
      */
 
-    private void createFrame(){
+    private void createFrame() {
         mainFrame = new JFrame("My Calculator");
 //        mainFrame.add(firstPanel);
         mainFrame.setContentPane(firstPanel); // instead .add
-        mainFrame.setSize(300,335);
+        mainFrame.setSize(300, 335);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setResizable(false);

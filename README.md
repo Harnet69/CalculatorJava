@@ -7,7 +7,7 @@
 <h2>Installation</h2>
 
 <p>Clone or download the repo: https://github.com/Harnet69/CalculatorJava.git</p>
-<p>Add path to external <i>JTattoo</i> library after clone project </p>
+<p>If "look and feel" external library JTattoo did't connect automatically, add it path after clone project.</p>
 <p>Compile & run the java file.</p>
 
 <h2>Usage</h2>
