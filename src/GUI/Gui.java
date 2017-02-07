@@ -231,5 +231,6 @@ public class Gui extends JFrame {
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setResizable(false);
         mainFrame.setVisible(true);
+        mainFrame.setIconImage(new ImageIcon("calculator-icon.png").getImage());
     }
 }
